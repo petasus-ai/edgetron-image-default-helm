@@ -1,0 +1,197 @@
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.13
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: x86_64
+  name: almalinux-8-v1.23.13-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.23.13-amd64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.13
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: aarch64
+  name: almalinux-8-v1.23.13-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.23.13-aarch64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.7
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: x86_64
+  name: almalinux-8-v1.24.7-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.24.7-amd64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.7
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: aarch64
+  name: almalinux-8-v1.24.7-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.24.7-aarch64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.25" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.25.5
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: x86_64
+  name: almalinux-8-v1.25.5-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.25.5-amd64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.25" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.25.5
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: aarch64
+  name: almalinux-8-v1.25.5-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.25.5-aarch64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}

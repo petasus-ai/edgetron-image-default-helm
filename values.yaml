@@ -1,0 +1,22 @@
+image:
+  realtime: false
+  kubernetes:
+    ubuntu:
+      #- "1.21"
+      #- "1.22"
+      - "1.23"
+      #- "1.24"
+      #- "1.25"
+    rocky:
+      #- "1.21"
+      #- "1.22"
+      - "1.23"
+      #- "1.24"
+      #- "1.25"
+    almalinux:
+      - "1.23"
+      #- "1.24"
+      #- "1.25"
+storageClass: longhorn-master
+pullMethod: node
+archType: amd64
