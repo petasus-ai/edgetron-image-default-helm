@@ -1,0 +1,197 @@
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.27" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.27.10
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: x86_64
+  name: ubuntu-2004-v1.27.10-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.27.10-amd64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.27" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.27.10
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: aarch64
+  name: ubuntu-2004-v1.27.10-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.27.10-aarch64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.28" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.28.7
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: x86_64
+  name: ubuntu-2004-v1.28.7-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.28.7-amd64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.28" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.28.7
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: aarch64
+  name: ubuntu-2004-v1.28.7-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.28.7-aarch64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.29" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.29.2
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: x86_64
+  name: ubuntu-2004-v1.29.2-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.29.2-amd64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.29" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.29.2
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: aarch64
+  name: ubuntu-2004-v1.29.2-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.29.2-aarch64
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
