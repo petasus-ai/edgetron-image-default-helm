@@ -1,0 +1,19 @@
+image:
+  realtime: false
+  registry: ""
+  kubernetes:
+    ubuntu:
+      - "1.36"
+    rocky:
+      - "1.36"
+  accelerator:
+    nvidia:
+      enable: true
+      version: 580
+# Full Kubernetes version per supported minor; resolves image.kubernetes
+# entries above into the kubeVersion annotation and the image tag.
+kubeVersions:
+  "1.36": v1.36.2
+storageClass: longhorn-master
+pullMethod: node
+archType: amd64
