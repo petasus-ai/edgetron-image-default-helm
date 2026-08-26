@@ -1,0 +1,274 @@
+{{ if .Values.image.accelerator.nvidia.enable }}
+{{/*{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}*/}}
+{{/*---*/}}
+{{/*apiVersion: cdi.kubevirt.io/v1beta1*/}}
+{{/*kind: DataVolume*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    acceleratorType: nvidia*/}}
+{{/*    description: Rocky 9 Image*/}}
+{{/*    isImage: "true"*/}}
+{{/*    imageType: "generic"*/}}
+{{/*    osType: "linux"*/}}
+{{/*    distroType: "rocky"*/}}
+{{/*    bootType: "uefi"*/}}
+{{/*    archType: "x86_64"*/}}
+{{/*  name: rocky-9-image-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64*/}}
+{{/*  namespace: imagevolume*/}}
+{{/*spec:*/}}
+{{/*  pvc:*/}}
+{{/*    accessModes:*/}}
+{{/*    - ReadWriteOnce*/}}
+{{/*    resources:*/}}
+{{/*      requests:*/}}
+{{/*        storage: 20Gi*/}}
+{{/*    storageClassName: {{ $.Values.storageClass }}*/}}
+{{/*  source:*/}}
+{{/*    registry:*/}}
+{{/*      {{- if .Values.image.registry }}*/}}
+{{/*      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64*/}}
+{{/*      {{- else }}*/}}
+{{/*      url: docker://quay.io/edgestack/rocky-9-uefi-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64*/}}
+{{/*      {{- end}}*/}}
+{{/*      pullMethod: {{ $.Values.pullMethod }}*/}}
+{{/*{{ end }}*/}}
+
+
+{{/*{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}*/}}
+{{/*---*/}}
+{{/*apiVersion: cdi.kubevirt.io/v1beta1*/}}
+{{/*kind: DataVolume*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    acceleratorType: nvidia*/}}
+{{/*    description: Rocky 9 Image*/}}
+{{/*    isImage: "true"*/}}
+{{/*    imageType: "generic"*/}}
+{{/*    osType: "linux"*/}}
+{{/*    distroType: "rocky"*/}}
+{{/*    bootType: "uefi"*/}}
+{{/*    archType: "aarch64"*/}}
+{{/*  name: rocky-9-image-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-arm64*/}}
+{{/*  namespace: imagevolume*/}}
+{{/*spec:*/}}
+{{/*  pvc:*/}}
+{{/*    accessModes:*/}}
+{{/*    - ReadWriteOnce*/}}
+{{/*    resources:*/}}
+{{/*      requests:*/}}
+{{/*        storage: 20Gi*/}}
+{{/*    storageClassName: {{ $.Values.storageClass }}*/}}
+{{/*  source:*/}}
+{{/*    registry:*/}}
+{{/*      {{- if .Values.image.registry }}*/}}
+{{/*      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64*/}}
+{{/*      {{- else }}*/}}
+{{/*      url: docker://quay.io/edgestack/rocky-9-uefi-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64*/}}
+{{/*      {{- end}}*/}}
+{{/*      pullMethod: {{ $.Values.pullMethod }}*/}}
+{{/*{{ end }}*/}}
+
+{{/*{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}*/}}
+{{/*---*/}}
+{{/*apiVersion: cdi.kubevirt.io/v1beta1*/}}
+{{/*kind: DataVolume*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    acceleratorType: nvidia*/}}
+{{/*    description: Almalinux 9 Image*/}}
+{{/*    isImage: "true"*/}}
+{{/*    imageType: "generic"*/}}
+{{/*    osType: "linux"*/}}
+{{/*    distroType: "almalinux"*/}}
+{{/*    bootType: "uefi"*/}}
+{{/*    archType: "x86_64"*/}}
+{{/*  name: almalinux-9-image-nvidia-amd64*/}}
+{{/*  namespace: imagevolume*/}}
+{{/*spec:*/}}
+{{/*  pvc:*/}}
+{{/*    accessModes:*/}}
+{{/*    - ReadWriteOnce*/}}
+{{/*    resources:*/}}
+{{/*      requests:*/}}
+{{/*        storage: 20Gi*/}}
+{{/*    storageClassName: {{ $.Values.storageClass }}*/}}
+{{/*  source:*/}}
+{{/*    registry:*/}}
+{{/*      {{- if .Values.image.registry }}*/}}
+{{/*      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/almalinux-9-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64*/}}
+{{/*      {{- else }}*/}}
+{{/*      url: docker://quay.io/edgestack/almalinux-9-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64*/}}
+{{/*      {{- end}}*/}}
+{{/*      pullMethod: {{ $.Values.pullMethod }}*/}}
+{{/*{{ end }}*/}}
+
+{{/*{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}*/}}
+{{/*---*/}}
+{{/*apiVersion: cdi.kubevirt.io/v1beta1*/}}
+{{/*kind: DataVolume*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    acceleratorType: nvidia*/}}
+{{/*    description: Almalinux 9 Image*/}}
+{{/*    isImage: "true"*/}}
+{{/*    imageType: "generic"*/}}
+{{/*    osType: "linux"*/}}
+{{/*    distroType: "almalinux"*/}}
+{{/*    bootType: "uefi"*/}}
+{{/*    archType: "aarch64"*/}}
+{{/*  name: almalinux-9-image-nvidia-arm64*/}}
+{{/*  namespace: imagevolume*/}}
+{{/*spec:*/}}
+{{/*  pvc:*/}}
+{{/*    accessModes:*/}}
+{{/*    - ReadWriteOnce*/}}
+{{/*    resources:*/}}
+{{/*      requests:*/}}
+{{/*        storage: 20Gi*/}}
+{{/*    storageClassName: {{ $.Values.storageClass }}*/}}
+{{/*  source:*/}}
+{{/*    registry:*/}}
+{{/*      {{- if .Values.image.registry }}*/}}
+{{/*      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/almalinux-9-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64*/}}
+{{/*      {{- else }}*/}}
+{{/*      url: docker://quay.io/edgestack/almalinux-9-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64*/}}
+{{/*      {{- end}}*/}}
+{{/*      pullMethod: {{ $.Values.pullMethod }}*/}}
+{{/*{{ end }}*/}}
+
+{{/*{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}*/}}
+{{/*---*/}}
+{{/*apiVersion: cdi.kubevirt.io/v1beta1*/}}
+{{/*kind: DataVolume*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    acceleratorType: nvidia*/}}
+{{/*    description: Ubuntu 22.04 Image*/}}
+{{/*    isImage: "true"*/}}
+{{/*    imageType: "generic"*/}}
+{{/*    osType: "linux"*/}}
+{{/*    distroType: "ubuntu"*/}}
+{{/*    bootType: "uefi"*/}}
+{{/*    archType: "x86_64"*/}}
+{{/*  name: ubuntu-2204-image-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64*/}}
+{{/*  namespace: imagevolume*/}}
+{{/*spec:*/}}
+{{/*  pvc:*/}}
+{{/*    accessModes:*/}}
+{{/*    - ReadWriteOnce*/}}
+{{/*    resources:*/}}
+{{/*      requests:*/}}
+{{/*        storage: 20Gi*/}}
+{{/*    storageClassName: {{ $.Values.storageClass }}*/}}
+{{/*  source:*/}}
+{{/*    registry:*/}}
+{{/*      {{- if .Values.image.registry }}*/}}
+{{/*      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2204-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64*/}}
+{{/*      {{- else }}*/}}
+{{/*      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64*/}}
+{{/*      {{- end}}*/}}
+{{/*      pullMethod: {{ $.Values.pullMethod }}*/}}
+{{/*{{ end }}*/}}
+
+{{/*{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}*/}}
+{{/*---*/}}
+{{/*apiVersion: cdi.kubevirt.io/v1beta1*/}}
+{{/*kind: DataVolume*/}}
+{{/*metadata:*/}}
+{{/*  annotations:*/}}
+{{/*    acceleratorType: nvidia*/}}
+{{/*    description: Ubuntu 22.04 Image*/}}
+{{/*    isImage: "true"*/}}
+{{/*    imageType: "generic"*/}}
+{{/*    osType: "linux"*/}}
+{{/*    distroType: "ubuntu"*/}}
+{{/*    bootType: "uefi"*/}}
+{{/*    archType: "aarch64"*/}}
+{{/*  name: ubuntu-2204-image-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-arm64*/}}
+{{/*  namespace: imagevolume*/}}
+{{/*spec:*/}}
+{{/*  pvc:*/}}
+{{/*    accessModes:*/}}
+{{/*    - ReadWriteOnce*/}}
+{{/*    resources:*/}}
+{{/*      requests:*/}}
+{{/*        storage: 20Gi*/}}
+{{/*    storageClassName: {{ $.Values.storageClass }}*/}}
+{{/*  source:*/}}
+{{/*    registry:*/}}
+{{/*      {{- if .Values.image.registry }}*/}}
+{{/*      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2204-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64*/}}
+{{/*      {{- else }}*/}}
+{{/*      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64*/}}
+{{/*      {{- end}}*/}}
+{{/*      pullMethod: {{ $.Values.pullMethod }}*/}}
+{{/*{{ end }}*/}}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Ubuntu 24.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: ubuntu-2404-image-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Ubuntu 24.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: ubuntu-2404-image-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+{{ end }}

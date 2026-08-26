@@ -1,0 +1,229 @@
+{{- if .Values.image.accelerator.nvidia.enable }}
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.32" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Rocky 9 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.32.9
+    osDistro: rocky-9
+    bootType: uefi
+    archType: x86_64
+  name: rocky-9-v1.32.9-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if $.Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-kube:v1.32.9-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-kube:v1.32.9-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.32" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Rocky 9 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.32.9
+    osDistro: rocky-9
+    bootType: uefi
+    archType: aarch64
+  name: rocky-9-v1.32.9-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if $.Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-kube:v1.32.9-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-kube:v1.32.9-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.33" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Rocky 9 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.33.5
+    osDistro: rocky-9
+    bootType: uefi
+    archType: x86_64
+  name: rocky-9-v1.33.5-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if $.Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-kube:v1.33.5-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-kube:v1.33.5-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.33" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Rocky 9 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.33.5
+    osDistro: rocky-9
+    bootType: uefi
+    archType: aarch64
+  name: rocky-9-v1.33.5-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if $.Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-kube:v1.33.5-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-kube:v1.33.5-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.34" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Rocky 9 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.34.1
+    osDistro: rocky-9
+    bootType: uefi
+    archType: x86_64
+  name: rocky-9-v1.34.1-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if $.Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-kube:v1.34.1-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-kube:v1.34.1-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-amd64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.34" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    acceleratorType: nvidia
+    description: Rocky 9 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.34.1
+    osDistro: rocky-9
+    bootType: uefi
+    archType: aarch64
+  name: rocky-9-v1.34.1-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 20Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if $.Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-kube:v1.34.1-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-kube:v1.34.1-nvidia-{{ $.Values.image.accelerator.nvidia.version }}-aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}

@@ -1,0 +1,25 @@
+image:
+  realtime: false
+  registry: ""
+  kubernetes:
+    ubuntu:
+      # - "1.32"
+      # - "1.33"
+      - "1.34"
+    rocky:
+      # - "1.32"
+      # - "1.33"
+      - "1.34"
+    almalinux:
+      # - "1.32"
+      # - "1.33"
+      - "1.34"
+  accelerator:
+    nvidia:
+      enable: true
+      version: 570
+    rebellions:
+      enable: false
+storageClass: longhorn-master
+pullMethod: node
+archType: amd64
