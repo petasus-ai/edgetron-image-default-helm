@@ -1,0 +1,279 @@
+---
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.13
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: multiarch
+  name: ubuntu-2004-v1.23.13
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.23.13
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.7
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: multiarch
+  name: ubuntu-2004-v1.24.7
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.24.7
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.25" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.25.3
+    osDistro: ubuntu-2004
+    bootType: legacy
+    archType: multiarch
+  name: ubuntu-2004-v1.25.3
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.25.3
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.13
+    osDistro: rocky-8
+    bootType: uefi
+    archType: multiarch
+  name: rocky-8-v1.23.13
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-uefi-kube:v1.23.13
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.7
+    osDistro: rocky-8
+    bootType: uefi
+    archType: multiarch
+  name: rocky-8-v1.24.7
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-uefi-kube:v1.24.7
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.25" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.25.3
+    osDistro: rocky-8
+    bootType: uefi
+    archType: multiarch
+  name: rocky-8-v1.25.3
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-uefi-kube:v1.25.3
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.13
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: multiarch
+  name: almalinux-8-v1.23.13
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.23.13
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.7
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: multiarch
+  name: almalinux-8-v1.24.7
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.24.7
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.almalinux }}
+{{- if eq . "1.25" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Alma Linux 8 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.25.5
+    osDistro: almalinux-8
+    bootType: legacy
+    archType: multiarch
+  name: almalinux-8-v1.25.5
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/almalinux-8-kube:v1.25.5
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
