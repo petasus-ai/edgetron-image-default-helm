@@ -1,0 +1,287 @@
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: CentOS 7 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+  name: centos-7-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/centos-7-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: CentOS 7 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+    isRealtime: "true"
+  name: centos-7-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/centos-7-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "uefi"
+  name: rocky-8-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-uefi-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 9 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "uefi"
+  name: rocky-9-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-9-uefi-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 18.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+  name: ubuntu-1804-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-1804-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 18.04 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+    isRealtime: "true"
+  name: ubuntu-1804-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-1804-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 20.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+  name: ubuntu-2004-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 20.04 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+    isRealtime: "true"
+  name: ubuntu-2004-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 22.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+  name: ubuntu-2204-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 22.04 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+    isRealtime: "true"
+  name: ubuntu-2204-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: OpenSUSE 15 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    bootType: "legacy"
+  name: opensuse-15-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/opensuse-15-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
