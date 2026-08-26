@@ -1,0 +1,463 @@
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "rocky"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: rocky-8-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-8-uefi-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-8-uefi-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "rocky"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: rocky-8-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-8-uefi-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-8-uefi-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 9 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "rocky"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: rocky-9-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 9 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "rocky"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: rocky-9-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/rocky-9-uefi-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/rocky-9-uefi-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: AlmaLinux 8 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "almalinux"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: almalinux-8-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/almalinux-8-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/almalinux-8-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: AlmaLinux 8 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "almalinux"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: almalinux-8-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/almalinux-8-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/almalinux-8-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Almalinux 9 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "almalinux"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: almalinux-9-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/almalinux-9-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/almalinux-9-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Almalinux 9 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "almalinux"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: almalinux-9-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/almalinux-9-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/almalinux-9-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 20.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: ubuntu-2004-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2004-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2004-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 20.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: ubuntu-2004-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2004-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2004-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 22.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: ubuntu-2204-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2204-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 22.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: ubuntu-2204-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2204-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 24.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "x86_64"
+  name: ubuntu-2404-image-amd64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:x86_64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:x86_64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+{{ if or (eq .Values.archType "multiarch") (eq .Values.archType "arm64") }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 24.04 Image
+    isImage: "true"
+    imageType: "generic"
+    osType: "linux"
+    distroType: "ubuntu"
+    bootType: "uefi"
+    archType: "aarch64"
+  name: ubuntu-2404-image-arm64
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 15Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      {{- if .Values.image.registry }}
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:aarch64
+      {{- else }}
+      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:aarch64
+      {{- end}}
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}

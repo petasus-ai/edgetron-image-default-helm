@@ -1,0 +1,19 @@
+image:
+  realtime: false
+  registry: ""
+  kubernetes:
+    ubuntu:
+      # - "1.29"
+      # - "1.30"
+      - "1.31"
+    rocky:
+      # - "1.29"
+      # - "1.30"
+      - "1.31"
+    almalinux:
+      # - "1.29"
+      # - "1.30"
+      - "1.31"
+storageClass: longhorn-master
+pullMethod: node
+archType: amd64
