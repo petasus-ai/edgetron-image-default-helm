@@ -1,0 +1,494 @@
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: CentOS 7 Image
+    isImage: "true"
+    imageType: "generic"
+  name: centos-7-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/centos-7-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: CentOS 7 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+  name: centos-7-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/centos-7-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image
+    isImage: "true"
+    imageType: "generic"
+  name: rocky-8-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+  name: rocky-8-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 18.04 Image
+    isImage: "true"
+    imageType: "generic"
+  name: ubuntu-1804-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-1804-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 18.04 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+  name: ubuntu-1804-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-1804-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 20.04 Image
+    isImage: "true"
+    imageType: "generic"
+  name: ubuntu-2004-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 20.04 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+  name: ubuntu-2004-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 22.04 Image
+    isImage: "true"
+    imageType: "generic"
+  name: ubuntu-2204-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{ if .Values.image.realtime }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 22.04 Image with Realtime Kernel
+    isImage: "true"
+    imageType: "generic"
+  name: ubuntu-2204-rt-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2204-container-disk:rt
+      pullMethod: {{ $.Values.pullMethod }}
+{{ end }}
+
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: OpenSUSE 15 Image
+    isImage: "true"
+    imageType: "generic"
+  name: opensuse-15-image
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 12Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/opensuse-15-container-disk:latest
+      pullMethod: {{ $.Values.pullMethod }}
+
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.21" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.21.13
+    osDistro: ubuntu-2004
+  name: ubuntu-2004-v1.21.13
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.21.13
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.22" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.22.10
+    osDistro: ubuntu-2004
+  name: ubuntu-2004-v1.22.10
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.22.10
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.7
+    osDistro: ubuntu-2004
+  name: ubuntu-2004-v1.23.7
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.23.7
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.ubuntu }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Ubuntu 2004 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.1
+    osDistro: ubuntu-2004
+  name: ubuntu-2004-v1.24.1
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/ubuntu-2004-kube:v1.24.1
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.21" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8.5 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.21.13
+    osDistro: rocky-8
+  name: rocky-8-v1.21.13
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-kube:v1.21.13
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.22" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8.5 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.22.10
+    osDistro: rocky-8
+  name: rocky-8-v1.22.10
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-kube:v1.22.10
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.23" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8.5 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.23.7
+    osDistro: rocky-8
+  name: rocky-8-v1.23.7
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-kube:v1.23.7
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}
+
+{{- range .Values.image.kubernetes.rocky }}
+{{- if eq . "1.24" }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  annotations:
+    description: Rocky 8.5 Image with Kubernetes Pre-installed
+    imageType: k8s
+    isImage: "true"
+    kubeVersion: v1.24.1
+    osDistro: rocky-8
+  name: rocky-8-v1.24.1
+  namespace: imagevolume
+spec:
+  pvc:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 11Gi
+    storageClassName: {{ $.Values.storageClass }}
+  source:
+    registry:
+      url: docker://quay.io/edgestack/rocky-8-kube:v1.24.1
+      pullMethod: {{ $.Values.pullMethod }}
+{{- end }}
+{{- end }}

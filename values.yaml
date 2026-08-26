@@ -1,0 +1,15 @@
+image:
+  realtime: false
+  kubernetes:
+    ubuntu:
+      #- "1.21"
+      #- "1.22"
+      - "1.23"
+      #- "1.24"
+    rocky:
+      #- "1.21"
+      #- "1.22"
+      - "1.23"
+      #- "1.24"
+storageClass: openebs-jiva-csi
+pullMethod: node
