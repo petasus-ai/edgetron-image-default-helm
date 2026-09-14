@@ -226,14 +226,14 @@ spec:
     - ReadWriteOnce
     resources:
       requests:
-        storage: 20Gi
+        storage: 48Gi
     storageClassName: {{ $.Values.storageClass }}
   source:
     registry:
       {{- if .Values.image.registry }}
-      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_full_x86_64
       {{- else }}
-      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_x86_64
+      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_full_x86_64
       {{- end}}
       pullMethod: {{ $.Values.pullMethod }}
 {{ end }}
@@ -260,14 +260,14 @@ spec:
     - ReadWriteOnce
     resources:
       requests:
-        storage: 20Gi
+        storage: 48Gi
     storageClassName: {{ $.Values.storageClass }}
   source:
     registry:
       {{- if .Values.image.registry }}
-      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64
+      url: docker://{{ $.Values.image.registry }}/quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_full_aarch64
       {{- else }}
-      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_aarch64
+      url: docker://quay.io/edgestack/ubuntu-2404-container-disk:nvidia_{{ $.Values.image.accelerator.nvidia.version }}_full_aarch64
       {{- end}}
       pullMethod: {{ $.Values.pullMethod }}
 {{ end }}
