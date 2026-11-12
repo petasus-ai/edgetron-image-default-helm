@@ -1,3 +1,5 @@
+{{- /* Helm keeps these DataVolumes when their minor leaves image.kubernetes: the clusters of
+     that minor still clone their nodes from them. */ -}}
 {{- if .Values.image.accelerator.nvidia.enable }}
 {{- if or (eq .Values.archType "multiarch") (eq .Values.archType "amd64") }}
 {{- range .Values.image.kubernetes.ubuntu }}
@@ -7,6 +9,7 @@ apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
   annotations:
+    helm.sh/resource-policy: keep
     description: Ubuntu 2404 Image with Kubernetes Pre-installed
     imageType: k8s
     isImage: "true"
@@ -44,6 +47,7 @@ apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
   annotations:
+    helm.sh/resource-policy: keep
     description: Ubuntu 2404 Image with Kubernetes Pre-installed
     imageType: k8s
     isImage: "true"
